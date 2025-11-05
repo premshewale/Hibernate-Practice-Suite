@@ -1,0 +1,58 @@
+package com.demo.bean;
+
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+@Entity
+@Table(name="Emp21July")
+
+public class Employee {
+	
+	
+	@Id
+	@GeneratedValue
+	private int empno;
+	
+	@Column(length=10)
+	private String name;
+	
+
+	private Address location;
+	
+	
+	public Employee(String name, Address location) {
+		super();
+		this.name = name;
+		this.location = location;
+	}
+
+	public int getEmpno() {
+		return empno;
+	}
+	public void setEmpno(int empno) {
+		this.empno = empno;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Address getLocation() {
+		return location;
+	}
+	public void setLocation(Address location) {
+		this.location = location;
+	}
+	public Employee() {
+		super();
+	}@Override
+	public String toString() {
+		return "Employee [empno=" + empno + ", name=" + name + ", location=" + location + "]";
+	}
+	
+}

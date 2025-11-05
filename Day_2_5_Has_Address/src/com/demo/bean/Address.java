@@ -1,0 +1,53 @@
+package com.demo.bean;
+
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+
+@Table(name="EmpADD21July")
+public class Address extends Employee  {
+	
+	@Column(length=10)
+	private String city;
+	@Column(length=6)
+	private String pin;
+	
+
+	public Address(String city, String pin) {
+		super();
+		this.city = city;
+		this.pin = pin;
+	}
+
+	public Address() {
+		super();
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getPin() {
+		return pin;
+	}
+
+	public void setPin(String pin) {
+		this.pin = pin;
+	}
+
+	@Override
+	public String toString() {
+		return "Address [city=" + city + ", pin=" + pin + "]";
+	}
+	
+	
+	
+	
+}
