@@ -1,0 +1,89 @@
+package com.demo.bean;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Product25julyWeb")
+public class Product {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="ProdID")
+	@SequenceGenerator(name="ProdID",sequenceName="seqprodid",initialValue=1,allocationSize=1)
+	@Column(name="ProductId")
+	private int ProdID;
+	@Column(name="ProductName",length=15)
+	private String ProdName;
+	@Column(length=15)
+	private String Category;
+	private int Quantity;
+	private int Price;
+	public int getProdID() {
+		return ProdID;
+	}
+	public void setProdID(int prodID) {
+		ProdID = prodID;
+	}
+	public String getProdName() {
+		return ProdName;
+	}
+	public void setProdName(String prodName) {
+		ProdName = prodName;
+	}
+	public String getCategory() {
+		return Category;
+	}
+	public void setCategory(String category) {
+		Category = category;
+	}
+	public int getQuantity() {
+		return Quantity;
+	}
+	public void setQuantity(int quantity) {
+		Quantity = quantity;
+	}
+	public int getPrice() {
+		return Price;
+	}
+	public void setPrice(int price) {
+		Price = price;
+	}
+	public Product(String prodName, String category, int quantity, int price) {
+		super();
+		ProdName = prodName;
+		Category = category;
+		Quantity = quantity;
+		Price = price;
+	}
+	
+	public Product(int prodID) {
+		super();
+		ProdID = prodID;
+	}
+	public Product() {
+		super();
+	}
+	public Product(int prodID, String prodName, String category, int quantity, int price) {
+		super();
+		ProdID = prodID;
+		ProdName = prodName;
+		Category = category;
+		Quantity = quantity;
+		Price = price;
+	}
+	@Override
+	public String toString() {
+		return "Product [ProdID=" + ProdID + ", ProdName=" + ProdName + ", Category=" + Category + ", Quantity="
+				+ Quantity + ", Price=" + Price + "]";
+	}
+	
+	
+	
+}
+
+
