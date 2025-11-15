@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;TestHQL2.java&apos; to &apos;Day_3_4_HQL/src/com.demo.test&apos;&#x0D;&#x0A;- Original project: &apos;Day_3_4_HQL&apos;&#x0D;&#x0A;- Destination element: &apos;Day_3_4_HQL/src/com.demo.test&apos;&#x0D;&#x0A;- Original element: &apos;com.demo.test.TestHQL2.java&apos;" description="Copy compilation unit" destination="/src&lt;com.demo.test" element1="/src&lt;com.demo.test{TestHQL2.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1690198756553" units="1" version="1.0"/>
+</session>

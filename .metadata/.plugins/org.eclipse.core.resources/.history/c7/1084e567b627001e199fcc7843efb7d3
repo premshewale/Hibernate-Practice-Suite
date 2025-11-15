@@ -1,0 +1,19 @@
+package com.demo.bean;
+
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+
+
+
+public class Address {
+	private int adrId;
+	@Column(length=10)
+	private String city;
+	@Column(length=6)
+	private String pin;
+	
+	
+	
+	
+	
+}

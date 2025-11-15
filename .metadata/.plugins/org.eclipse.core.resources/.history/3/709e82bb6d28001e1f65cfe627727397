@@ -1,0 +1,62 @@
+package com.demo.bean;
+
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table(name="AdrOfEmp21july")
+public class Address {
+	@Id
+	@GeneratedValue
+	private int adrId;
+	@Column(length=10)
+	private String city;
+	@Column(length=6)
+	private String pin;
+	
+	
+	public Address(String city, String pin) {
+		super();
+		this.city = city;
+		this.pin = pin;
+	}
+	public Address(int adrId, String city, String pin) {
+		super();
+		this.adrId = adrId;
+		this.city = city;
+		this.pin = pin;
+	}
+	public Address() {
+		super();
+	}
+	public int getAdrId() {
+		return adrId;
+	}
+	public void setAdrId(int adrId) {
+		this.adrId = adrId;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getPin() {
+		return pin;
+	}
+	public void setPin(String pin) {
+		this.pin = pin;
+	}
+	@Override
+	public String toString() {
+		return "Address [adrId=" + adrId + ", city=" + city + ", pin=" + pin + "]";
+	}
+	
+	
+	
+	
+	
+}

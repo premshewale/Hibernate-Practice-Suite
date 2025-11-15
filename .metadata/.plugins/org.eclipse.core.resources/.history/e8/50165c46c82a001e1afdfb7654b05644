@@ -1,0 +1,49 @@
+package com.demo.test;
+
+import java.util.List;
+
+import org.hibernate.Criteria;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Restrictions;
+
+import com.demo.bean.Product;
+
+public class TestCriteria2 {
+
+Session s;
+	
+	public TestCriteria2(){
+		Configuration cfg=new Configuration();
+		cfg.configure();
+		SessionFactory sf= cfg.buildSessionFactory();
+		s=sf.openSession();
+	}
+		public void ShowProduct(){
+			Transaction t= s.beginTransaction();
+			Criteria crt1=s.createCriteria(Product.class);
+			Criterion cr1=Restrictions.between("Quantity", 70, 100);
+			crt1.add(cr1);
+			List<Product> list=crt1.list();
+			
+			for(Product p:list){
+			
+				System.out.println(p);
+			}
+				
+			t.commit();
+			s.close();
+		}
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TestCriteria2 tc1= new TestCriteria2();
+		tc1.ShowProduct();
+	}
+
+}

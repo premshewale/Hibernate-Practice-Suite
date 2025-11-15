@@ -1,0 +1,44 @@
+package com.demo.test;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.demo.bean.Product;
+
+
+
+public class TestHQl1 {
+	Session s;
+	
+	public TestHQl1(){
+		Configuration cfg=new Configuration();
+		cfg.configure();
+		SessionFactory sf= cfg.buildSessionFactory();
+		s=sf.openSession();
+	}
+		public void ShowAllProduct(){
+			Transaction t= s.beginTransaction();
+			Query query1 =s.createQuery("desc Product");
+			Query query =s.createQuery("from Product");
+			List<Product> list=query.list();
+			
+			for(Product p:list)
+				System.out.println(p);
+			t.commit();
+			s.close();
+		}
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		TestHQl1 t1= new TestHQl1();
+		t1.ShowAllProduct();
+	}
+
+}

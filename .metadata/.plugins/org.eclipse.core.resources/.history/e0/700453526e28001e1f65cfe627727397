@@ -1,0 +1,34 @@
+package com.demo.bean;
+
+public class Manager extends Employee{
+  
+	private double incentive;
+
+	public double getIncentive() {
+		return incentive;
+	}
+
+	public void setIncentive(double incentive) {
+		this.incentive = incentive;
+	}
+
+	public Manager( String name, double incentive) {
+		super(name);
+		this.incentive = incentive;
+	}
+
+	public Manager(double incentive) {
+		super();
+		this.incentive = incentive;
+	}
+
+	@Override
+	public String toString() {
+		return "Manager [incentive=" + incentive + ", getEmpno()=" + getEmpno() + ", getName()=" + getName()
+				+ ", getLocation()=" + getLocation() + ", toString()=" + super.toString() + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + "]";
+	}
+	
+	
+	
+}

@@ -1,0 +1,15 @@
+package com.demo.bean;
+
+import org.hibernate.cfg.Configuration;
+import org.hibernate.exception.spi.Configurable;
+
+public class TestMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			
+		Configurable cfg=new Configuration();
+		cfg.configure("hibernate.cfg.xml");
+	}
+
+}

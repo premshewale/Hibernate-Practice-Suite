@@ -1,0 +1,24 @@
+package com.demo.bean;
+
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="EmpMgr22julyInh")
+public class Employee {
+	@Id
+	@GeneratedValue
+	private int empno;
+	@Column(length=10)
+	private String name;
+	@OneToOne
+	private double salary;
+	
+	
+	
+}
